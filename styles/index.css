@@ -531,4 +531,44 @@ main{
       }
     }
   }
+
+  #projects{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    padding-inline: 5%;
+    #projects-p{
+      color: var(--accent);
+      font-family: 'jetbrains mono', monospace;
+      font-size: 1rem;
+    }
+    h3{
+      font-family: 'syne', sans-serif;
+      font-weight: 800;
+      font-size: 3rem;
+      transform: translateY(-30px);
+      background: linear-gradient(20deg, var(--accent), var(--accent2), var(--accent3));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    #projects-divs{
+      display: flex;
+      flex-direction: row;
+      gap: 5%;
+      flex-wrap: wrap;
+      row-gap: 5%;
+      div{
+        width: 30%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        img{
+          width: 100%;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+      }
+    }
+  }
 }
