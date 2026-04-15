@@ -12,6 +12,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/messages", router);
+app.use("/projects", router);
 
 const PORT = process.env.PORT||8402;
 
@@ -22,3 +23,4 @@ app.get("/", (req, res)=>{
 app.listen(8402, ()=>{
     console.log(`server running on port ${PORT}`);
 });
+

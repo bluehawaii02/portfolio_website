@@ -43,6 +43,7 @@ form.addEventListener("submit", (e)=>{
   const username = document.querySelector("#name-form").value.trim();
   const userMail = document.querySelector("#email-form").value.trim();
   const userMessage = document.querySelector("#textarea-shit").value;
+  const userUpdate = document.querySelector("#error-message");
 
   fetch('http://localhost:8402/messages', {
     method: 'POST',
@@ -61,11 +62,33 @@ form.addEventListener("submit", (e)=>{
   })
   .then(data => {
     console.log(data);
-    alert('message sent!');
+    userUpdate.textContent = data.message;
     form.reset();
   })
   .catch(err => {
     console.error(err);
     alert('error sending message');
+  })
+});
+
+const projects = document.querySelectorAll(".project1");
+
+projects.forEach(project => {
+  const id = project.dataset.id;
+
+  const likeIcon = document.querySelector(".fa-thumbs-up");
+  const likeCount = document.querySelector(".likes");
+
+  likeIcon.addEventListener("click", ()=>{
+    fetch(`http://localhost:8402/projects/${id}/like`, {
+      method: 'PUT'
+    })
+    .then(res => res.json())
+    .then(data => {
+      likeCount.textContent = data.likes
+    })
+    .catch(error => {
+      console.log(error)
+    })
   })
 });
