@@ -33,9 +33,9 @@ s0.parentNode.insertBefore(s1,s0);
 
             <div id="secondheader-child">
                 <a href="#aboutme">About</a>
-                <a href="#">Services</a>
-                <a href="#">Contact</a>
-                <a href="#">Portfolio</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+                <a href="#projects">Portfolio</a>
                 <button class="hirebtn">hire me</button>
             </div>
         </section>
@@ -68,11 +68,11 @@ s0.parentNode.insertBefore(s1,s0);
                     // From Nairobi, Kenya <i class="bx bx-location"></i>
                 </p>
                 <div id="herobuttons">
-                    <button class="myworkbtn">
+                    <button class="myworkbtn" onclick="window.location.href = '#projects'">
                         view my work
                     </button>
 
-                    <button class="hirebtn">
+                    <button class="hirebtn" onclick="window.location.href = '#two-form'">
                         hire me
                     </button>
                 </div>
@@ -444,10 +444,20 @@ s0.parentNode.insertBefore(s1,s0);
                     <div id="connect">
                         <h5>Let's connect</h5>
                         <div id="connect-icons">
-                            <i class="fa-brands fa-github"></i>
-                            <i class="fa-brands fa-linkedin"></i>
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <i class="fa-solid fa-envelope"></i>
+                            <a href="https://github.com/bluehawaii02">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/dalton-kimutai/">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a href="https://wa.me/+254769083499">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+
+                            <a href="mailto:daltonkimutai02@gmail.com">
+                                <i class="fa-solid fa-envelope"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -456,8 +466,8 @@ s0.parentNode.insertBefore(s1,s0);
                     <h5>SEND A MESSAGE.</h5>
                     <div id="form-divs">
                         <div id="form-divs1">
-                            <input type="text" placeholder="Your name..." required>
-                            <input type="text" placeholder="Your email..." required>
+                            <input type="text" placeholder="Your name..." required id="name-form">
+                            <input type="text" placeholder="Your email..." required id="email-form">
                         </div>
                         <textarea name="textarea" id="textarea-shit" placeholder="Your message..."></textarea>
                         <button>SUBMIT</button>
@@ -470,7 +480,9 @@ s0.parentNode.insertBefore(s1,s0);
     </main>
 
     <footer>
-
+        <hr style="margin-inline: 5%; color: rgba(0, 245, 196, .5); margin-top: 0;">
+        <p>&copy;2026|torongeiDevLabs|All Rights Reserved|Designed & built by Dalton Torongei.</p>
+        <button onclick="window.location.href = '#contact'">Get in touch</button>
     </footer>
 
     <script src="scripts/index.js"></script>

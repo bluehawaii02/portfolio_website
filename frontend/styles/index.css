@@ -348,6 +348,7 @@ main{
           background: linear-gradient(135deg, var(--accent), var(--accent2));
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+          background-clip: text;
           margin-top: 0;
         }
         strong{
@@ -426,7 +427,7 @@ main{
       background: linear-gradient(20deg, var(--accent),var(--accent2), var(--accent3));;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clipext:text;
+      background-clip: text;
     }
     #all-services{
       display: grid;
@@ -559,6 +560,7 @@ main{
       background: linear-gradient(20deg, var(--accent), var(--accent2), var(--accent3));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     #projects-divs{
       display: flex;
@@ -649,7 +651,7 @@ main{
     padding-top: 5rem;
     padding-inline: 5%;
     background-color: var(--bg2);
-    padding-bottom: 5rem;
+    padding-bottom: 8rem;
     #contact-p{
       color: var(--accent);
       font-family: 'jetbrains mono', monospace;
@@ -665,6 +667,7 @@ main{
       background: linear-gradient(180deg, var(--accent), var(--accent2), var(--accent3));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     #two-divs{
       display: flex;
@@ -800,6 +803,9 @@ main{
             justify-content: flex-start;
             align-items: center;
             gap: 20px;
+            a{
+              color: rgba(255, 255, 255, .9);
+            }
             i{
               padding: 15px;
               font-size: 1.4rem;
@@ -859,5 +865,27 @@ main{
         }
       }
     }
+  }
+}
+
+footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  hr{
+    width: 90%;
+  }
+  p{
+    color: var(--muted);
+  }
+  button{
+    background: linear-gradient(135deg, var(--accent), var(--accent2), var(--accent3));
+    border: none;
+    font-size: 1rem;
+    font-family: 'jetbrains mono', monospace;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 2rem;
   }
 }

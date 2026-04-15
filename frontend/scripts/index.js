@@ -33,3 +33,39 @@ function fillTicker() {
 }
 fillTicker();
 window.addEventListener('resize', fillTicker);
+
+const form = document.querySelector("#two-form");
+
+
+form.addEventListener("submit", (e)=>{
+  e.preventDefault();
+
+  const username = document.querySelector("#name-form").value.trim();
+  const userMail = document.querySelector("#email-form").value.trim();
+  const userMessage = document.querySelector("#textarea-shit").value;
+
+  fetch('http://localhost:8402/messages', {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      name:username,
+      email:userMail,
+      message:userMessage
+    })
+  })
+  .then(res=> {
+    if(!res.ok) throw new Error('request failed');
+    return res.json();
+  })
+  .then(data => {
+    console.log(data);
+    alert('message sent!');
+    form.reset();
+  })
+  .catch(err => {
+    console.error(err);
+    alert('error sending message');
+  })
+});
