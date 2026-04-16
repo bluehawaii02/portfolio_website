@@ -47,7 +47,7 @@ form.addEventListener("submit", (e)=>{
   const userMessage = document.querySelector("#textarea-shit").value;
   const userUpdate = document.querySelector("#error-message");
 
-  fetch('http://localhost:8402/messages', {
+  fetch(`${window.API_URL}/messages`, {
     method: 'POST',
     headers: {
       "Content-Type": "application/json"
@@ -84,7 +84,7 @@ projects.forEach(project => {
   const likeCount = project.querySelector(".likes");
 
   likeIcon.addEventListener("click", ()=>{
-    fetch(`http://localhost:8402/projects/${id}/like`, {
+    fetch(`${window.API_URL}/projects/${id}/like`, {
       method: 'PUT'
     })
     .then(res => res.json())
@@ -100,7 +100,7 @@ projects.forEach(project => {
   const dislikeCount = project.querySelector(".dislikes");
 
   dislikeIcon.addEventListener("click", ()=>{
-    fetch(`http://localhost:8402/projects/${id}/dislike`, {
+    fetch(`${window.API_URL}/${id}/dislike`, {
       method: 'PUT'
     })
     .then(res => res.json())
@@ -114,7 +114,7 @@ projects.forEach(project => {
 });
 
 window.addEventListener("DOMContentLoaded", ()=>{
-  fetch(`http://localhost:8402/projects`, {
+  fetch(`${window.API_URL}/projects`, {
     method: 'GET',
   })
   .then(res => {

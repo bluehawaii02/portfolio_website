@@ -1,0 +1,1 @@
+window.API_URL="https://portfolio-website-backend-mk9g.onrender.com"
