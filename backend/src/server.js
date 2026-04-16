@@ -9,7 +9,9 @@ connecting();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: "*"
+}));
 app.use(express.json());
 app.use("/messages", router);
 app.use("/projects", router);
@@ -20,7 +22,7 @@ app.get("/", (req, res)=>{
     res.send("hello from your server!")
 })
 
-app.listen(8402, ()=>{
+app.listen(PORT, ()=>{
     console.log(`server running on port ${PORT}`);
 });
 
