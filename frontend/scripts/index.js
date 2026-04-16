@@ -1,3 +1,5 @@
+
+
 const items = [
   { label: 'React', color: '#378ADD' },
   { label: 'JavaScript', color: '#BA7517' },
@@ -73,11 +75,13 @@ form.addEventListener("submit", (e)=>{
 
 const projects = document.querySelectorAll(".project1");
 
+
+
 projects.forEach(project => {
   const id = project.dataset.id;
 
-  const likeIcon = document.querySelector(".fa-thumbs-up");
-  const likeCount = document.querySelector(".likes");
+  const likeIcon = project.querySelector(".fa-thumbs-up");
+  const likeCount = project.querySelector(".likes");
 
   likeIcon.addEventListener("click", ()=>{
     fetch(`http://localhost:8402/projects/${id}/like`, {
@@ -91,4 +95,46 @@ projects.forEach(project => {
       console.log(error)
     })
   })
+
+  const dislikeIcon = project.querySelector(".fa-thumbs-down");
+  const dislikeCount = project.querySelector(".dislikes");
+
+  dislikeIcon.addEventListener("click", ()=>{
+    fetch(`http://localhost:8402/projects/${id}/dislike`, {
+      method: 'PUT'
+    })
+    .then(res => res.json())
+    .then(data =>{
+      dislikeCount.textContent = data.dislikes
+    })
+    .catch(error =>{
+      console.log(error);
+    })
+  })
 });
+
+window.addEventListener("DOMContentLoaded", ()=>{
+  fetch(`http://localhost:8402/projects`, {
+    method: 'GET',
+  })
+  .then(res => {
+    return res.json();
+  })
+  .then(data => {
+    data.forEach(project => {
+      const projectDiv = document.querySelector(`[data-id = "${project._id}"]`);
+
+      if(!projectDiv) return;
+
+
+      const likeCount = projectDiv.querySelector(".likes");
+      const dislikes = projectDiv.querySelector(".dislikes");
+
+      likeCount.textContent = project.likes;
+      dislikes.textContent = project.dislikes;
+    })
+  })
+  .catch(error =>{
+    console.log(error);
+  })
+})
