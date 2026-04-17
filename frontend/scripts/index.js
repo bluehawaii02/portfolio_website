@@ -138,3 +138,73 @@ window.addEventListener("DOMContentLoaded", ()=>{
     console.log(error);
   })
 })
+
+/*const certsButton =  document.querySelector("#certs");
+
+certsButton.addEventListener('click', ()=> {
+  document.body.style.overflowY = "hidden";
+  //document.body.style.filter = "blur(2px)";
+
+  const modalCover = document.createElement("section");
+  const modal = document.createElement("img");
+  const cert1 = document.createElement("div");
+  const cert2 = document.createElement("div");
+  const cert3 = document.createElement("div");
+  const cert4 = document.createElement("div");
+
+
+  document.body.appendChild(modalCover);
+
+  modalCover.style.position = 'fixed';
+  modalCover.style.top = '0';
+  modalCover.style.left = '0';
+  modalCover.style.zIndex = '1000';
+  modalCover.style.backgroundColor = "rgba(20, 20, 200, .3)";
+  modalCover.style.width = "100vw";
+  modalCover.style.height = "100vh";
+  modalCover.style.display = "flex";
+  modalCover.style.flexDirection = "row";
+  modalCover.style.justifyContent = "center";
+  modalCover.style.alignItems = "center";
+
+  modalCover.appendChild(modal);
+
+  modal.style.width = "60%";
+  modal.style.height = "50%"
+  modal.style.backgroundColor = "rgba(6, 9, 16, 1)"
+  modal.style.borderRadius = "10px";
+  modal.style.display = "flex";
+  modal.style.flexDirection = "row";
+  modal.style.justifyContent = "center";
+  modal.style.gap = "10px";
+  modal.style.padding = "10px"
+
+  modal.append(cert1, cert2, cert3, cert4);
+
+  const allCerts = [cert1, cert2, cert3, cert4];
+
+  allCerts.forEach(cert => {
+    cert.style.backgroundColor = 'white';
+    cert.style.width = '30%';
+    cert.style.height = '30%';
+  })
+})*/
+
+const certsButton = document.querySelector("#certs");
+
+certsButton.addEventListener("click", ()=>{
+  const modalCover = document.querySelector("#modalcover");
+  //const modal = document.querySelector("#modal");
+  const closeIcon = document.querySelector(".fa-x");
+
+  if(modalCover.style.display === 'none'){
+    modalCover.style.display = 'flex';
+    document.body.style.overflowY = 'hidden';
+    closeIcon.addEventListener("click", ()=>{
+      modalCover.style.display = 'none';
+      document.body.style.overflowY = 'scroll';
+    })
+  }else{
+    modalCover.style.display = 'none';
+  }
+})
