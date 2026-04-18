@@ -182,7 +182,7 @@ main{
     #me{
       opacity: 0;
       animation: fadeup .6s ease forwards .4s;
-      width: 300px;
+      width: 20%;
       aspect-ratio: 1;
       position: relative;
       img{
@@ -198,7 +198,7 @@ main{
       inset: 0;
       /*border: 5px solid var(--accent);*/
       box-shadow: 0 0 30px var(--accent), 0 0 20px rgba(255, 107, 107, 1), 5px 5px 20px red;
-      width: 300px;
+      width: 100%;
       aspect-ratio: 1;
       border-radius: 50%;
     }
@@ -207,7 +207,7 @@ main{
       position: absolute;
       background: rgba(0, 245, 196, 0.15);
       inset: 0;
-      width: 300px;
+      width: 100%;
       aspect-ratio: 1;
       border-radius: 50%;
     }
@@ -542,6 +542,8 @@ main{
     #stack-divs{
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
+      width: 90vw;
       gap: 5%;
       padding: 0;
       margin: 0;
@@ -549,8 +551,10 @@ main{
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         flex-wrap: wrap;
-        min-width: 250px;
+        flex: 1 1 200px;
+        max-width: 300px;
         padding: 10px 20px;
         border-radius: 10px;
         border-bottom: none;
@@ -945,5 +949,32 @@ footer{
     padding: 5px 10px;
     border-radius: 5px;
     margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 1640px){
+  main{
+    #aboutme{
+      #certs{
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+@media (max-width: 1465px){
+  main{
+    #hero{
+      #me{
+        margin-right: 5%;
+      }
+      #::after{
+        margin-right: 5%;
+      }
+    }
+
+    #stacks{
+
+    }
   }
 }
