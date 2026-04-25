@@ -222,4 +222,12 @@ if(dropContent && dropIcon){
       dropContent.style.display = 'none'
     }
   })
-}
+};
+
+const buttons = document.querySelectorAll(".inq-btn");
+
+buttons.forEach(button => {
+  button.addEventListener("click", ()=>{
+    document.location = '#contact'
+  })
+})
