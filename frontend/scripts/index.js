@@ -207,4 +207,19 @@ certsButton.addEventListener("click", ()=>{
   }else{
     modalCover.style.display = 'none';
   }
-})
+});
+
+const dropIcon = document.querySelector("#dropIcon");
+const dropContent = document.querySelector("#dropdown");
+
+if(dropContent && dropIcon){
+  dropIcon.addEventListener("click", ()=>{
+    if(dropContent.style.display == 'none'){
+      dropContent.style.display = 'flex';
+      dropContent.style.flexDirection = 'column'
+    }
+    else{
+      dropContent.style.display = 'none'
+    }
+  })
+}
