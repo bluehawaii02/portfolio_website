@@ -1,8 +1,8 @@
 :root{
-  --bg: rgba(6, 9, 16, 1);
+  --bg: rgb(29, 1, 26);
   --bg2: rgba(13, 17, 23, 1);
   --surface: rgba(17, 24, 39, 1);
-  --accent: rgba(0, 245, 196, 1);
+  --accent: rgba(128, 216, 46, 0.596);
   --accent2: rgba(124, 111, 255, 1);
   --accent3: rgba(255, 107, 107, 1);
   --text: rgba(226, 232, 240, 1);
@@ -146,6 +146,8 @@ main{
         opacity: 0;
         animation: fadeup .6s ease forwards .4s;
         span{
+          font-size: 4rem;
+          font-weight: 900;
           padding-top: 0;
           margin-top: 0;
           display: flex;
@@ -155,7 +157,7 @@ main{
           -webkit-text-fill-color: transparent;
           background-clip: text;
           width: 90%;
-          font-family: 'syne', sans-serif;
+          font-family: 'diplomata', creepster;
         }
       }
       #more-on-hero{
@@ -204,7 +206,7 @@ main{
       content: "";
       inset: 0;
       /*border: 5px solid var(--accent);*/
-      box-shadow: 0 0 30px var(--accent), 0 0 20px rgba(255, 107, 107, 1), 5px 5px 20px red;
+      box-shadow: 0 0 30px var(--accent), 0 0 20px rgb(224, 18, 252), 5px 5px 20px rgb(0, 255, 157);
       width: 100%;
       aspect-ratio: 1;
       border-radius: 50%;
@@ -349,7 +351,7 @@ main{
         font-family: 'jetbrains mono', monospace;
         padding-bottom: 0;
         h3{
-          font-family: 'syne', sans-serif;
+          font-family: 'permanent marker', sans-serif;
           font-weight: 800;
           font-size: 3.5rem;
           background: linear-gradient(135deg, var(--accent), var(--accent2));
@@ -388,6 +390,7 @@ main{
           border-right: 1px solid var(--border);
           border-left: 1px solid var(--border);
           transition: all 10s ease-in-out forwards;
+          animation: slide-left 1s ease-in-out forwards;
           h4{
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -410,6 +413,14 @@ main{
           transform: scaleX(1.1);
         }
       }
+    }
+  }
+
+  @keyframes slide-left{
+    from{
+      transform: translateX(-20px)
+    }to{
+      transform: translateX(0)
     }
   }
 
@@ -484,7 +495,7 @@ main{
       font-family: 'jetbrains mono', monospace;
     }
     #first-h3{
-      font-family: 'syne', sans-serif;
+      font-family: 'permanent marker', sans-serif;
       font-weight: 800;
       font-size: 4rem;
       padding-top: 0;
@@ -523,6 +534,23 @@ main{
     }
   }
 
+  .service1{
+    animation: fade-in linear forwards ;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+  }
+
+  @keyframes fade-in{
+    from{
+      transform: scale(.9);
+      opacity: .8;
+    }
+    to{
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
   #stacks{
     display: flex;
     flex-direction: column;
@@ -542,7 +570,7 @@ main{
       -webkit-text-fill-color: transparent;
       font-size: 3rem;
       font-weight: 800;
-      font-family: 'syne',sans-serif;
+      font-family: 'permanent marker',sans-serif;
       padding-top: 0;
       margin-top: 0;
     }
@@ -622,7 +650,7 @@ main{
       font-size: 1rem;
     }
     h3{
-      font-family: 'syne', sans-serif;
+      font-family: 'permanent marker', sans-serif;
       font-weight: 800;
       font-size: 3rem;
       transform: translateY(-30px);
@@ -731,7 +759,7 @@ main{
       width: 80%;
       font-size: 4rem;
       font-weight: 800;
-      font-family: 'syne', sans-serif;
+      font-family: 'permanent marker', sans-serif;
       transform: translateY(-20px);
       background: linear-gradient(180deg, var(--accent), var(--accent2), var(--accent3));
       -webkit-background-clip: text;
